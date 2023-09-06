@@ -47,5 +47,53 @@ namespace Indexators
                 }
             }
         }
+
+        public int this[double index]
+        {
+            get
+            {
+                int newIndex;
+
+                if ((index - (int)index) < 0.5)
+                {
+                    newIndex = (int)index;
+                }
+                else newIndex = (int)index + 1;
+
+                if(newIndex >= 0 && newIndex < Length)
+                {
+                    ErrorBounds = false;
+                    return array[newIndex];
+                }
+                else
+                {
+                    ErrorBounds = true;
+                    return 0;
+                }
+            }
+
+            set
+            {
+                int newIndex;
+
+                if ((index - (int)index) < 0.5)
+                {
+                    newIndex = (int)index;
+                }
+                else newIndex = (int)index + 1;
+
+                if(newIndex >= 0 && newIndex < Length)
+                {
+                    array[newIndex] = value;
+                    ErrorBounds = false;
+                }
+                else
+                {
+                    ErrorBounds = true;
+                }
+            }
+
+
+        }
     }
 }
