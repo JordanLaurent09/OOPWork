@@ -18,6 +18,7 @@ namespace Indexators
             Length = size;
         }
 
+        // Basic indexer
         public int this[int index]
         {
             get
@@ -48,6 +49,7 @@ namespace Indexators
             }
         }
 
+        // Overloaded indexer
         public int this[double index]
         {
             get
