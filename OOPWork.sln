@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.33529.622
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankProject", "BankProject\BankProject.csproj", "{7B8A28ED-CA7E-46E0-88CA-F1AD3C617F4B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Indexators", "Indexators\Indexators.csproj", "{942CEA9B-1540-4D5F-B240-718E1A0AFC03}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7B8A28ED-CA7E-46E0-88CA-F1AD3C617F4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B8A28ED-CA7E-46E0-88CA-F1AD3C617F4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B8A28ED-CA7E-46E0-88CA-F1AD3C617F4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{942CEA9B-1540-4D5F-B240-718E1A0AFC03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{942CEA9B-1540-4D5F-B240-718E1A0AFC03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{942CEA9B-1540-4D5F-B240-718E1A0AFC03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{942CEA9B-1540-4D5F-B240-718E1A0AFC03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
