@@ -8,8 +8,24 @@ namespace Inheritance
 {
     class Triangle : TwoDShape
     {
-        public string Type; // Type of the triangle
+        string Type; // Type of the triangle
 
+        // Create constructors
+
+        public Triangle()
+        {
+            Type = null;
+        }
+
+        public Triangle(double side):base(side)
+        {
+            Type = "Равнобедренный";
+        }
+
+        public Triangle(string type, double width, double height):base(width, height)
+        {
+            Type = type;
+        }
 
         // Area of triangle
         public double Area()

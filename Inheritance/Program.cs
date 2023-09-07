@@ -11,16 +11,11 @@ namespace Inheritance
         static void Main(string[] args)
         {
             // Create instance of TwoDShape class and work with it fields and method 
-            TwoDShape shape = new TwoDShape();
-            shape.Height = 20;
-            shape.Width = 13;
+            TwoDShape shape = new TwoDShape(13, 20);
             shape.ShowDimension();
 
             // Create instance of Triangle class and work with it fields and methods 
-            Triangle triangle = new Triangle();
-            triangle.Height = 21;
-            triangle.Width = 11;
-            triangle.Type = "Прямоугольный";
+            Triangle triangle = new Triangle("Прямоугольный", 11, 21);
             triangle.ShowDimension();
             triangle.ShowType();
             Console.WriteLine($"Triangle area is {triangle.Area()}");
