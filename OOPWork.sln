@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankProject", "BankProject\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Indexators", "Indexators\Indexators.csproj", "{942CEA9B-1540-4D5F-B240-718E1A0AFC03}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inheritance", "Inheritance\Inheritance.csproj", "{0D7A4C5B-B69F-49F7-AA90-55375056A405}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{942CEA9B-1540-4D5F-B240-718E1A0AFC03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{942CEA9B-1540-4D5F-B240-718E1A0AFC03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{942CEA9B-1540-4D5F-B240-718E1A0AFC03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D7A4C5B-B69F-49F7-AA90-55375056A405}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D7A4C5B-B69F-49F7-AA90-55375056A405}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D7A4C5B-B69F-49F7-AA90-55375056A405}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D7A4C5B-B69F-49F7-AA90-55375056A405}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
