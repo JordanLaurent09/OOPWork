@@ -16,6 +16,18 @@ namespace VirtualMeth
             ChildClass cc = new ChildClass(6, 13);
             cc.Show();
             Console.WriteLine(cc.code);
+
+            // Work with an animals
+
+            Animal animal = new Animal("An Animal");
+            animal.WhatTheAnimal();
+            animal.Voice();
+            animal.Info();
+            Snake snake = new Snake("Snake");
+            snake.WhatTheAnimal();
+            snake.Voice();
+            snake.Info();
+
         }
     }
 }
