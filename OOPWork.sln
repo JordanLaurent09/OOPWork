@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Indexators", "Indexators\In
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inheritance", "Inheritance\Inheritance.csproj", "{0D7A4C5B-B69F-49F7-AA90-55375056A405}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualMeth", "VirtualMeth\VirtualMeth.csproj", "{2CB18189-7419-4FE8-A1EE-E6A152C865D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{0D7A4C5B-B69F-49F7-AA90-55375056A405}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D7A4C5B-B69F-49F7-AA90-55375056A405}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D7A4C5B-B69F-49F7-AA90-55375056A405}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CB18189-7419-4FE8-A1EE-E6A152C865D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CB18189-7419-4FE8-A1EE-E6A152C865D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CB18189-7419-4FE8-A1EE-E6A152C865D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CB18189-7419-4FE8-A1EE-E6A152C865D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
