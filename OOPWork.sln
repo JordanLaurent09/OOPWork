@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualMeth", "VirtualMeth\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassesInteraction", "ClassesInteraction\ClassesInteraction.csproj", "{93D7E607-B3B1-4FC3-86A4-AB6CAE76686C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OverridingMethods", "OverridingMethods\OverridingMethods.csproj", "{0741F4B2-8E5F-4EB4-AE67-B5EC532B5627}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{93D7E607-B3B1-4FC3-86A4-AB6CAE76686C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93D7E607-B3B1-4FC3-86A4-AB6CAE76686C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93D7E607-B3B1-4FC3-86A4-AB6CAE76686C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0741F4B2-8E5F-4EB4-AE67-B5EC532B5627}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0741F4B2-8E5F-4EB4-AE67-B5EC532B5627}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0741F4B2-8E5F-4EB4-AE67-B5EC532B5627}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0741F4B2-8E5F-4EB4-AE67-B5EC532B5627}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

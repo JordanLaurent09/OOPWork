@@ -22,10 +22,8 @@ namespace ClassesInteraction
 
         // default constructor
 
-        public Point()
+        public Point() : this(0,0)
         {
-            this.x = 0;
-            this.y = 0;
         }
 
         // public property for x
