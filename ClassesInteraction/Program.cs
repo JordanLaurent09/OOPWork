@@ -10,6 +10,9 @@ namespace ClassesInteraction
     {
         static void Main(string[] args)
         {
+            Point point = new Point(4, 3);
+            point.Print();
+            Console.WriteLine(point.LengthOrigin());
         }
     }
 }
