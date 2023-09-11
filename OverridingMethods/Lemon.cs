@@ -15,12 +15,34 @@ namespace OverridingMethods
             this.price = price;
         }
 
-        public static Lemon operator +(Lemon one, Lemon two)
+
+        /* Тоже рабочий метод, только с одним нюансом -
+         * конфликтует с аналогичным перегруженным методом с возвращаемым
+         * типом double, посему заключен в комментарии */
+
+        //public static Lemon operator +(Lemon one, Lemon two)
+        //{
+        //    return new Lemon(one.price + two.price);
+        //}
+
+        public static double operator +(Lemon one, Lemon two)
         {
-            return new Lemon(one.price + two.price);
+            return one.price + two.price;
         }
 
-        public static Lemon operator++(Lemon lemon)
+        // Сложение объекта класса Lemon с вещественным числом
+        public static Lemon operator +(Lemon lemon, double d)
+        {
+            return new Lemon(lemon.price + d);
+        }
+
+        // Сложение вещественного числа с объектом класса Lemon.
+        public static Lemon operator +(double d, Lemon lemon)
+        {
+            return lemon + d;
+        }
+
+        public static Lemon operator ++(Lemon lemon)
         {
             return new Lemon(lemon.price += lemon.price);
         }

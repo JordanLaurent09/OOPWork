@@ -12,7 +12,7 @@ namespace OverridingMethods
         {
             Lemon one = new Lemon(32.12);
             Lemon two = new Lemon(11.22);
-            Lemon three = one + two;
+            double three = one + two;
             Console.WriteLine(three);
             Lemon four = one++;
             Console.WriteLine(four);
