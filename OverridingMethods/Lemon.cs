@@ -42,6 +42,13 @@ namespace OverridingMethods
             return lemon + d;
         }
 
+        // Унарный оператор
+
+        public static double operator +(Lemon lemon)
+        {
+            return lemon.price;
+        }
+
         public static Lemon operator ++(Lemon lemon)
         {
             return new Lemon(lemon.price += lemon.price);
