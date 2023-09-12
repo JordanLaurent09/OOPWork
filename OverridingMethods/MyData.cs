@@ -48,5 +48,37 @@ namespace OverridingMethods
         {
             return number - (+data);
         }
+
+        public static MyData operator +(MyData data, string text)
+        {
+            return new MyData(+data, -data, text);
+        }
+
+        public static string operator ~(MyData data)
+        {
+            return data.text;
+        }
+        
+        public static int operator +(MyData data)
+        {
+            return data.code;
+        }
+
+        public static char operator -(MyData data)
+        {
+            return data.symb;
+        }
+
+        public static char operator >>(MyData data, int k)
+        {
+            return (~data)[k];
+        }
+
+        public static char operator <<(MyData data, int k)
+        {
+            return (~data)[(~data).Length - k - 1];
+        }
+
+
     }
 }
