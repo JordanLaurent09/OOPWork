@@ -33,7 +33,7 @@ namespace OverridingMethods
         // Сложение объекта класса Lemon с вещественным числом
         public static Lemon operator +(Lemon lemon, double d)
         {
-            return new Lemon(lemon.price + d);
+            return new Lemon(lemon.price + d);  // Такой объект, созданный без присваивания ссылки на него переменной, называется АНОНИМНЫМ. 
         }
 
         // Сложение вещественного числа с объектом класса Lemon.
