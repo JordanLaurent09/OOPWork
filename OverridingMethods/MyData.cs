@@ -79,6 +79,22 @@ namespace OverridingMethods
             return (~data)[(~data).Length - k - 1];
         }
 
+        public static MyData operator ^(MyData one, MyData two)
+        {
+            string text = ~one + " & " + ~two;
+            return new MyData(+one, -two, text);
+        }
 
+        public static MyData operator ++(MyData data)
+        {
+            data.code += 10;
+            return data;
+        }
+
+        public static MyData operator --(MyData data)
+        {
+            data.code -= 10;
+            return data;
+        }
     }
 }
