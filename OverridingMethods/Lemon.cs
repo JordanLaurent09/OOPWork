@@ -9,10 +9,11 @@ namespace OverridingMethods
     class Lemon
     {
         double price;
-
-        public Lemon(double price)
+        double weight;
+        public Lemon(double price, double weight)
         {
             this.price = price;
+            this.weight = weight;
         }
 
 
@@ -33,7 +34,7 @@ namespace OverridingMethods
         // Сложение объекта класса Lemon с вещественным числом
         public static Lemon operator +(Lemon lemon, double d)
         {
-            return new Lemon(lemon.price + d);  // Такой объект, созданный без присваивания ссылки на него переменной, называется АНОНИМНЫМ. 
+            return new Lemon(lemon.price + d, lemon.weight);  // Такой объект, созданный без присваивания ссылки на него переменной, называется АНОНИМНЫМ. 
         }
 
         // Сложение вещественного числа с объектом класса Lemon.
@@ -51,8 +52,45 @@ namespace OverridingMethods
 
         public static Lemon operator ++(Lemon lemon)
         {
-            return new Lemon(lemon.price += lemon.price);
+            return new Lemon(lemon.price += lemon.price, lemon.weight);
         }
+
+
+        // Перегрузка операторов  == и !=
+
+
+        public static bool operator ==(Lemon one, Lemon two)
+        {
+            return one.Equals(two);
+        } 
+
+        public static bool operator !=(Lemon one, Lemon two)
+        {
+            return !(one == two);
+        }
+
+        // Переопределение методов Equals() и GetHashCode()
+
+        public override bool Equals(Object obj)
+        {
+            Lemon lemon = (Lemon)obj;
+
+            if(price == lemon.price && weight == lemon.weight)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            int hashCode = (int)(price*weight/255);
+            return hashCode;
+        }
+
 
         public override string ToString()
         {
