@@ -16,6 +16,30 @@ namespace OverridingMethods
             this.weight = weight;
         }
 
+        public double Price
+        {
+            get
+            {
+                return price;
+            }
+            set
+            {
+                price = value;
+            }
+        }
+
+        public double Weight
+        {
+            get
+            {
+                return weight;
+            }
+
+            set
+            {
+                weight = value;
+            }
+        }
 
         /* Тоже рабочий метод, только с одним нюансом -
          * конфликтует с аналогичным перегруженным методом с возвращаемым
@@ -89,6 +113,21 @@ namespace OverridingMethods
         {
             int hashCode = (int)(price*weight/255);
             return hashCode;
+        }
+
+
+        // Перегрузка операторов true и false
+
+
+        public static bool operator true(Lemon lemon)
+        {
+            if (lemon.price > 10.00) return true;
+            else return false;
+        }
+        public static bool operator false(Lemon lemon)
+        {
+            if (lemon) return false;
+            else return true;
         }
 
 

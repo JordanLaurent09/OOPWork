@@ -10,12 +10,20 @@ namespace OverridingMethods
     {
         static void Main(string[] args)
         {
-            Lemon one = new Lemon(32.12);
-            Lemon two = new Lemon(11.22);
+            Lemon one = new Lemon(32.12, 0.12);
+            Lemon two = new Lemon(11.22, 0.43);
             double three = one + two;
             Console.WriteLine(three);
             Lemon four = one++;
             Console.WriteLine(four);
+
+            while(two)
+            {
+                Console.Write($"{two.Price} ");
+                two.Price--;
+            }
+
+
         }
     }
 }
