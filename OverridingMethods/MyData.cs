@@ -19,6 +19,23 @@ namespace OverridingMethods
             this.text = text;
         }
 
+        public MyData(char symb)
+        {
+            this.symb = symb;
+        }
+
+
+        public char Symb
+        {
+            get
+            {
+                return symb;
+            }
+            set
+            {
+                symb = value;
+            }
+        }
 
         // Перегрузка метода ToString()
 
@@ -95,6 +112,44 @@ namespace OverridingMethods
         {
             data.code -= 10;
             return data;
+        }
+
+
+        // Перегрузка операторов true, false, &, |
+
+        public static bool operator true(MyData data)
+        {
+            switch (data.symb)
+            {
+                case 'A':
+                case 'E':
+                case 'T':
+                case 'O':
+                case 'U':
+                case 'Y':
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
+        public static bool operator false(MyData data)
+        {
+            if (data) return data.symb == 'Y';
+            else return true;
+        }
+
+
+        public static MyData operator &(MyData one, MyData two)
+        {
+            if (one) return two;
+            else return one;
+        }
+
+        public static MyData operator |(MyData one, MyData two)
+        {
+            if (one) return one;
+            else return two;
         }
     }
 }

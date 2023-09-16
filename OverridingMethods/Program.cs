@@ -23,6 +23,19 @@ namespace OverridingMethods
                 two.Price--;
             }
 
+            MyData dataOne = new MyData('A');
+            MyData dataTwo = new MyData('B');
+            MyData dataThree = new MyData('E');
+
+            Console.WriteLine($"A&&B: {(dataOne && dataTwo).Symb}");
+            Console.WriteLine($"B&&A: {(dataTwo && dataOne).Symb}");
+            Console.WriteLine($"A&&E: {(dataOne && dataThree).Symb}");
+            Console.WriteLine($"E&&A: {(dataThree && dataOne).Symb}");
+            Console.WriteLine($"A||B: {(dataOne || dataTwo).Symb}");
+            Console.WriteLine($"B||A: {(dataTwo || dataOne).Symb}");
+            Console.WriteLine($"A||E: {(dataOne || dataThree).Symb}");
+            Console.WriteLine($"E||A: {(dataThree || dataOne).Symb}");
+
 
         }
     }
