@@ -37,6 +37,23 @@ namespace OverridingMethods
             Console.WriteLine($"E||A: {(dataThree || dataOne).Symb}");
 
 
+            // Различные приведения типов с участием класса MyData
+
+            MyData first = new MyData(11, 'V', "Timber");
+            string timber = (string) first;
+            int number = first;
+            char symbol = first;
+            Console.WriteLine($"{timber},{number},{symbol}");
+
+            MyData newData = timber;
+            Console.WriteLine(newData.ToString());
+            newData = number;
+            Console.WriteLine(newData.ToString());
+            newData = symbol;
+            Console.WriteLine(newData.ToString());
+
+
+
         }
     }
 }

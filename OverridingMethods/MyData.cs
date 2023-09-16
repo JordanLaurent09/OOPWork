@@ -75,7 +75,7 @@ namespace OverridingMethods
         {
             return data.text;
         }
-        
+
         public static int operator +(MyData data)
         {
             return data.code;
@@ -123,7 +123,7 @@ namespace OverridingMethods
             {
                 case 'A':
                 case 'E':
-                case 'T':
+                case 'I':
                 case 'O':
                 case 'U':
                 case 'Y':
@@ -150,6 +150,41 @@ namespace OverridingMethods
         {
             if (one) return one;
             else return two;
+        }
+
+
+        // Перегрузка операторов приведения типов
+
+        
+        public static explicit operator String(MyData data)
+        {
+            return data.text;
+        }
+
+        public static implicit operator char(MyData data)
+        {
+            return data.symb;
+        }
+
+        public static implicit operator int(MyData data)
+        {
+            return data.code;
+        }
+        
+        
+        public static implicit operator MyData(int n)
+        {
+            return new MyData(n, 'B', "Beta");
+        }
+
+        public static explicit operator MyData(char symb)
+        {
+            return new MyData(24, symb, "Twenty-four");
+        }
+
+        public static implicit operator MyData(string line)
+        {
+            return new MyData(line.Length, line[0], line);
         }
     }
 }
