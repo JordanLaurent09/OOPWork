@@ -10,6 +10,19 @@ namespace AbstractProject
     {
         static void Main(string[] args)
         {
+            Person person = new Person("Person");
+            Employee employee = new Employee("Employee", "Company");
+            Client client = new Client("Client", "Bank");
+
+            List<Person> data = new List<Person>();
+            data.Add(person);
+            data.Add(employee);
+            data.Add(client);
+
+            foreach(Person item in data)
+            {
+                item.Display();
+            }
         }
     }
 }
