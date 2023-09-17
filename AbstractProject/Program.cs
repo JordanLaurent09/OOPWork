@@ -23,6 +23,20 @@ namespace AbstractProject
             {
                 item.Display();
             }
+
+
+            // Examples of downcasting
+
+            Employee tommy = new Employee("Tommy", "Malibu club");
+            Person guy = tommy;
+            Employee tommyAgain = (Employee)guy;
+
+            Person buyer = new Client("Tim", "NorthernStar");
+            Console.WriteLine(buyer.GetType());
+
+            Client rocky = (Client)buyer;
+            
+
         }
     }
 }
