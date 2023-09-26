@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OverridingMethods", "Overri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractProject", "AbstractProject\AbstractProject.csproj", "{77771FCC-BC24-4905-8ED9-6F9A9712A73E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vector3DProject", "Vector3DProject\Vector3DProject.csproj", "{2A5868C8-2DDA-475D-8DA6-7E627DC541DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{77771FCC-BC24-4905-8ED9-6F9A9712A73E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77771FCC-BC24-4905-8ED9-6F9A9712A73E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77771FCC-BC24-4905-8ED9-6F9A9712A73E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A5868C8-2DDA-475D-8DA6-7E627DC541DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A5868C8-2DDA-475D-8DA6-7E627DC541DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A5868C8-2DDA-475D-8DA6-7E627DC541DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A5868C8-2DDA-475D-8DA6-7E627DC541DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
