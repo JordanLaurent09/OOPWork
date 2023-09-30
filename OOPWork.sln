@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimalProject", "AnimalProj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutobaseProject", "AutobaseProject\AutobaseProject.csproj", "{2237BB9E-CCB6-4180-8F9E-7565277E5D7E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberDigitProject", "NumberDigitProject\NumberDigitProject.csproj", "{87AD0BD0-0D15-4263-A8E5-68AC8E23DD02}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{2237BB9E-CCB6-4180-8F9E-7565277E5D7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2237BB9E-CCB6-4180-8F9E-7565277E5D7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2237BB9E-CCB6-4180-8F9E-7565277E5D7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87AD0BD0-0D15-4263-A8E5-68AC8E23DD02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87AD0BD0-0D15-4263-A8E5-68AC8E23DD02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87AD0BD0-0D15-4263-A8E5-68AC8E23DD02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87AD0BD0-0D15-4263-A8E5-68AC8E23DD02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
