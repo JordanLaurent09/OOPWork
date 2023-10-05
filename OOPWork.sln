@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TupleWork", "TupleWork\Tupl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegateProject", "DelegateProject\DelegateProject.csproj", "{DB8050FA-47E2-4F44-B5AD-7A9FFAB34484}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collections.PartOne", "Collections.PartOne\Collections.PartOne.csproj", "{72243649-B4EE-40CF-8C02-5627868E2EAC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{DB8050FA-47E2-4F44-B5AD-7A9FFAB34484}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB8050FA-47E2-4F44-B5AD-7A9FFAB34484}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB8050FA-47E2-4F44-B5AD-7A9FFAB34484}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72243649-B4EE-40CF-8C02-5627868E2EAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72243649-B4EE-40CF-8C02-5627868E2EAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72243649-B4EE-40CF-8C02-5627868E2EAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72243649-B4EE-40CF-8C02-5627868E2EAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
