@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberDigitProject", "Numbe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TupleWork", "TupleWork\TupleWork.csproj", "{160ED3F5-7DD9-4B2E-A405-25103C7A1FF6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegateProject", "DelegateProject\DelegateProject.csproj", "{DB8050FA-47E2-4F44-B5AD-7A9FFAB34484}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{160ED3F5-7DD9-4B2E-A405-25103C7A1FF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{160ED3F5-7DD9-4B2E-A405-25103C7A1FF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{160ED3F5-7DD9-4B2E-A405-25103C7A1FF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB8050FA-47E2-4F44-B5AD-7A9FFAB34484}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB8050FA-47E2-4F44-B5AD-7A9FFAB34484}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB8050FA-47E2-4F44-B5AD-7A9FFAB34484}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB8050FA-47E2-4F44-B5AD-7A9FFAB34484}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
