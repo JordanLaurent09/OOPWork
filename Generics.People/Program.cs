@@ -34,12 +34,13 @@ namespace Generics.People
         public int Age { get; set; }
         public string Address { get; set; }
         public string PhoneNumber { get; set; }
+
+        
     }
 
     class Employee : Person
     {
         public int Id { get; set; }
-        public string Rang { get; set; }
 
         public string Position { get; set; }
 
@@ -47,13 +48,31 @@ namespace Generics.People
 
         public DateTime JobStartDate { get; set; }
 
-        
+        public Employee(int id, string position, decimal salary, DateTime jobStart)
+        {
+            Id = id;
+            Position = position;
+            Salary = salary;
+            JobStartDate = jobStart;
+        }
+
+        public override string ToString()
+        {
+            return $"Текущий идентификатор - {Id}, текущая должность - {Position}, " +
+                $"зарплата - {Salary} рублей, а дата приема на работу - {JobStartDate.ToShortDateString()}.";
+        }
     }
 
     class Teacher : Employee
     {
         public string Subject { get; set; }
         public int WorkExperience { get; set; }
+
+        public Teacher(int id, string position, decimal salary, DateTime jobTime, string subject, int workExperience):base(id,position,salary, jobTime)
+        {
+            Subject = subject;
+            WorkExperience = workExperience;
+        }
     }
 
     class Student : Employee
@@ -61,6 +80,13 @@ namespace Generics.People
         public int Course { get; set; }
         public string Speciality { get; set; }
         public double AverageMark { get; set; }
+
+        public Student(int id, string position, decimal salary, DateTime jobTime, int course, string speciality, double mark) : base(id, position, salary, jobTime)
+        {
+            Course = course;
+            Speciality = speciality;
+            AverageMark = mark;
+        }
     }
 
     class Manager : Employee
@@ -68,12 +94,27 @@ namespace Generics.People
         public string ControlArea { get; set; }
         public int WorkersNumber { get; set; }
         public int ControlExperience { get; set; }
+
+        public Manager(int id, string position, decimal salary, DateTime jobTime, string area, int workers, int experience) : base(id, position, salary, jobTime)
+        {
+            ControlArea = area;
+            WorkersNumber = workers;
+            ControlExperience = experience;
+        }
     }
 
     class Programmer : Employee
     {
-        public string ProgramminLanguage { get; set; }
+        public string ProgrammingLanguage { get; set; }
         public List<string> Projects { get; set; }
         public string Specialization { get; set; }
+
+        public Programmer(int id, string position, decimal salary, DateTime jobTime, string language, List<string> proj, string spec) : base(id, position, salary, jobTime)
+        {
+            ProgrammingLanguage = language;
+            Projects = proj;
+            Specialization = spec;
+         
+        }
     }
 }
