@@ -11,6 +11,33 @@ namespace Generics.People
     {
         static void Main(string[] args)
         {
+            Teacher teacher = new Teacher(180, 65, 'ж', Color.Brown, "Мария Ивановна", 34, "Улица Ленина, 15", "1234567",
+                                          22, "Завуч", 66500.22m, new DateTime(2018, 9, 1), "Математика", 5);
+
+            Student student = new Student(165, 52, 'ж', Color.Green, "Наталья Сергеевна", 31, "Улица Челнокова, 20", "8787765",
+                                          111, "Студентка", 1500.33m, new DateTime(2019, 5, 1), 4, "Физика", 4.4);
+
+            Manager manager  = new Manager(191, 88, 'м', Color.Blue, "Семен Семенов", 41, "Улица Горького, 18", "987654",
+                                          77, "Начальник отдела", 150000.00m, new DateTime(2011, 6, 1), "Снабжение", 20, 10);
+
+            Programmer programmer = new Programmer(185, 75, 'м', Color.Gray, "Николай Николаев", 27, "Улица Чайковского, 21", "33503864",
+                                          66, "Джун", 300000.00m, new DateTime(2019, 7, 1), "C#", new List<string>() {"Файловый менеджер", "Система регистрации"},
+                                          "Бэкенд");
+
+            teacher.GetBasicInfo();
+            teacher.GetWorkerInfo();
+            Console.WriteLine();
+
+            student.GetBasicInfo();
+            student.GetWorkerInfo();
+            Console.WriteLine();
+
+            manager.GetBasicInfo();
+            manager.GetWorkerInfo();
+            Console.WriteLine();
+
+            programmer.GetBasicInfo();
+            programmer.GetWorkerInfo();
         }
     }
 
