@@ -35,7 +35,23 @@ namespace Generics.People
         public string Address { get; set; }
         public string PhoneNumber { get; set; }
 
-        
+        public Person(double heigth,double weight, char sex, Color color, string name, int age, string address, string phone)
+        {
+            Height = heigth;
+            Weight = weight;
+            Sex = sex;
+            Colour = color;
+            Name = name;
+            Age = age;
+            Address = address;
+            PhoneNumber = phone;
+        }
+
+        public void GetBasicInfo()
+        {
+            Console.WriteLine($"Рост - {Weight}, вес - {Height}, пол - {Sex}, цвет глаз - {Colour}, " +
+                $"имя - {Name}, возраст - {Age}, адрес - {Address}, телефон - {PhoneNumber}");
+        }
     }
 
     class Employee : Person
@@ -48,7 +64,9 @@ namespace Generics.People
 
         public DateTime JobStartDate { get; set; }
 
-        public Employee(int id, string position, decimal salary, DateTime jobStart)
+        public Employee(double height, double weight, char sex, Color color, string name, int age, string address, string phone,
+                        int id, string position, decimal salary, DateTime jobStart):
+                        base(height, weight, sex, color, name, age, address,phone)
         {
             Id = id;
             Position = position;
@@ -56,10 +74,10 @@ namespace Generics.People
             JobStartDate = jobStart;
         }
 
-        public override string ToString()
+        public void  GetWorkerInfo()
         {
-            return $"Текущий идентификатор - {Id}, текущая должность - {Position}, " +
-                $"зарплата - {Salary} рублей, а дата приема на работу - {JobStartDate.ToShortDateString()}.";
+            Console.WriteLine($"Текущий идентификатор - {Id}, текущая должность - {Position}, " +
+                $"зарплата - {Salary} рублей, а дата приема на работу - {JobStartDate.ToShortDateString()}.");
         }
     }
 
@@ -68,10 +86,12 @@ namespace Generics.People
         public string Subject { get; set; }
         public int WorkExperience { get; set; }
 
-        public Teacher(int id, string position, decimal salary, DateTime jobTime, string subject, int workExperience):base(id,position,salary, jobTime)
+        public Teacher(double height, double weight, char sex, Color color, string name, int age, string address, string phone,
+                       int id, string position, decimal salary, DateTime jobStart, string subject, int experience) :
+                       base(height, weight, sex, color, name, age, address, phone, id, position, salary, jobStart)
         {
             Subject = subject;
-            WorkExperience = workExperience;
+            WorkExperience = experience;
         }
     }
 
@@ -81,8 +101,10 @@ namespace Generics.People
         public string Speciality { get; set; }
         public double AverageMark { get; set; }
 
-        public Student(int id, string position, decimal salary, DateTime jobTime, int course, string speciality, double mark) : base(id, position, salary, jobTime)
-        {
+        public Student(double height, double weight, char sex, Color color, string name, int age, string address, string phone,
+                        int id, string position, decimal salary, DateTime jobStart, int course, string speciality, double mark) :
+                        base(height, weight, sex, color, name, age, address, phone, id, position, salary, jobStart)
+        { 
             Course = course;
             Speciality = speciality;
             AverageMark = mark;
@@ -95,7 +117,9 @@ namespace Generics.People
         public int WorkersNumber { get; set; }
         public int ControlExperience { get; set; }
 
-        public Manager(int id, string position, decimal salary, DateTime jobTime, string area, int workers, int experience) : base(id, position, salary, jobTime)
+        public Manager(double height, double weight, char sex, Color color, string name, int age, string address, string phone,
+                        int id, string position, decimal salary, DateTime jobStart, string area, int workers, int experience) :
+                        base(height, weight, sex, color, name, age, address, phone, id, position, salary, jobStart)
         {
             ControlArea = area;
             WorkersNumber = workers;
@@ -109,7 +133,9 @@ namespace Generics.People
         public List<string> Projects { get; set; }
         public string Specialization { get; set; }
 
-        public Programmer(int id, string position, decimal salary, DateTime jobTime, string language, List<string> proj, string spec) : base(id, position, salary, jobTime)
+        public Programmer(double height, double weight, char sex, Color color, string name, int age, string address, string phone,
+                          int id, string position, decimal salary, DateTime jobStart, string language, List<string> proj, string spec) :
+                          base(height, weight, sex, color, name, age, address, phone, id, position, salary, jobStart)
         {
             ProgrammingLanguage = language;
             Projects = proj;
