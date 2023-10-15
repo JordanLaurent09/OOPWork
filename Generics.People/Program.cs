@@ -74,7 +74,7 @@ namespace Generics.People
             JobStartDate = jobStart;
         }
 
-        public void  GetWorkerInfo()
+        public virtual void  GetWorkerInfo()
         {
             Console.WriteLine($"Текущий идентификатор - {Id}, текущая должность - {Position}, " +
                 $"зарплата - {Salary} рублей, а дата приема на работу - {JobStartDate.ToShortDateString()}.");
@@ -93,6 +93,12 @@ namespace Generics.People
             Subject = subject;
             WorkExperience = experience;
         }
+
+        public override void GetWorkerInfo()
+        {
+            base.GetWorkerInfo();
+            Console.WriteLine($"Предмет, ведомый учителем - {Subject}, а общий стаж преподавания - {WorkExperience}");
+        } 
     }
 
     class Student : Employee
@@ -108,6 +114,12 @@ namespace Generics.People
             Course = course;
             Speciality = speciality;
             AverageMark = mark;
+        }
+
+        public override void GetWorkerInfo()
+        {
+            base.GetWorkerInfo();
+            Console.WriteLine($"Студент учится на {Course} курсе по специальности {Speciality}, его средний балл - {AverageMark}.");
         }
     }
 
@@ -125,6 +137,13 @@ namespace Generics.People
             WorkersNumber = workers;
             ControlExperience = experience;
         }
+
+        public override void GetWorkerInfo()
+        {
+            base.GetWorkerInfo();
+            Console.WriteLine($"Область управления менеджера - {ControlArea}, количество его подчиненных - {WorkersNumber}, " +
+                              $"а его общий стажв управлении - {ControlExperience}.");
+        }
     }
 
     class Programmer : Employee
@@ -141,6 +160,17 @@ namespace Generics.People
             Projects = proj;
             Specialization = spec;
          
+        }
+
+        public override void GetWorkerInfo()
+        {
+            base.GetWorkerInfo();
+            Console.WriteLine($"Программист пишет на языке {ProgrammingLanguage}, а его специализация это {Specialization}.");
+            Console.WriteLine("Список проектов программиста:");
+            foreach(string item in Projects)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }
