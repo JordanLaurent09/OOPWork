@@ -73,6 +73,7 @@ namespace InterfacesWork.Deep
             {
                 Console.WriteLine(item.Name);
             }
+            Console.WriteLine();
 
             // Перебор задач сотрудников с помощью интерфейса IEnumerable
 
@@ -84,10 +85,51 @@ namespace InterfacesWork.Deep
                     Task t = e.Current;
                     Console.WriteLine($"{t.Title} {t.Priority} {t.DueDate.ToShortDateString()}");
                 }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+
+            // Отображение списка сотрудников,их задач и глубоких копий задач
+
+            // Запись копий задач в отдельный массив
+            List<List<Task>> clones = new List<List<Task>>();
+
+            foreach(var item in workers)
+            {
+                List<Task> tasks = new List<Task>();
+                for(int i = 0; i < item.Tasks.Count; i++)
+                {
+                    Task clone = (Task)item.Tasks[i].Clone();
+                    tasks.Add(clone);
+                }
+                clones.Add(tasks);
             }
 
-            
-            
+            // Вывод информации о сотрудниках, их задач и копий их задач на консоль
+
+            foreach(var item in workers)
+            {
+                Console.WriteLine($"Работник по имени {item.Name} и с кодом {item.Id} имеет следующие задачи: ");
+                IEnumerator<Task> e = item.GetEnumerator();
+                while (e.MoveNext())
+                {
+                    Task t = e.Current;
+                    Console.WriteLine($"{t.Title} {t.Priority} {t.DueDate.ToShortDateString()}");
+                }
+                Console.WriteLine();
+            }
+
+            Console.WriteLine();
+
+
+            foreach (List<Task> item in clones)
+            {
+                Console.WriteLine("Клонированные задачи работника:");
+                for(int i = 0; i< item.Count; i++)
+                {
+                    Console.WriteLine($"{item[i].Title} {item[i].Priority} {item[i].DueDate.ToShortDateString()}");
+                }
+            }
         }
     }
 
@@ -118,7 +160,7 @@ namespace InterfacesWork.Deep
         }
     }
 
-    
+
     // Класс Task реализует интерфейс ICloneable
     class Task:ICloneable
     {
