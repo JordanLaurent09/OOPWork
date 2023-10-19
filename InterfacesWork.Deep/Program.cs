@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -57,14 +58,40 @@ namespace InterfacesWork.Deep
                 }
             };
 
-            List<Employee> workers = new List<Employee>();
-            workers.Add(first);
-            workers.Add(second);
-            workers.Add(third);
+
+            Employee[] workers = new Employee[3];
+            workers[0] = first;
+            workers[1] = second;
+            workers[2] = third;
+
+            // Сортировка списка сотрудников, используя реализованный интерйейс IComparable
+
+            Array.Sort(workers);
+
+
+            foreach(var item in workers)
+            {
+                Console.WriteLine(item.Name);
+            }
+
+            // Перебор задач сотрудников с помощью интерфейса IEnumerable
+
+            foreach(Employee item in workers)
+            {
+                IEnumerator<Task> e = item.GetEnumerator();
+                while (e.MoveNext())
+                {
+                    Task t = e.Current;
+                    Console.WriteLine($"{t.Title} {t.Priority} {t.DueDate.ToShortDateString()}");
+                }
+            }
+
+            
+            
         }
     }
 
-    class Employee:IComparable<Employee>
+    class Employee:IComparable<Employee>, IEnumerable<Task>
     {
         public string Name { get; set; }
         public int Id { get; set; }
@@ -77,9 +104,21 @@ namespace InterfacesWork.Deep
         {
             return Tasks.Count.CompareTo(another.Tasks.Count);
         }
+
+
+        // Реализация интерфейса IEnumerable
+        public IEnumerator<Task> GetEnumerator()
+        {
+            return ((IEnumerable<Task>)Tasks).GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return ((IEnumerable)Tasks).GetEnumerator();
+        }
     }
 
-
+    
     // Класс Task реализует интерфейс ICloneable
     class Task:ICloneable
     {
