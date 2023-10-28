@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generics.People", "Generics
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfacesWork.Deep", "InterfacesWork.Deep\InterfacesWork.Deep.csproj", "{172AA0EA-2A91-4725-BEEF-5D42CA8B420A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces.TaskManager", "Interfaces.TaskManager\Interfaces.TaskManager.csproj", "{EF87415F-0745-4F05-A383-D39BC20341EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,10 @@ Global
 		{172AA0EA-2A91-4725-BEEF-5D42CA8B420A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{172AA0EA-2A91-4725-BEEF-5D42CA8B420A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{172AA0EA-2A91-4725-BEEF-5D42CA8B420A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF87415F-0745-4F05-A383-D39BC20341EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF87415F-0745-4F05-A383-D39BC20341EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF87415F-0745-4F05-A383-D39BC20341EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF87415F-0745-4F05-A383-D39BC20341EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
