@@ -8,12 +8,16 @@ namespace DelegatesExtended
 {
     class Program
     {
-        public delegate int DelegateSum(int firstNumber, int secondNumber);
-        public delegate string[] DelegateWordsArraySort(string[] initialArray); 
+        public delegate double DelegateSum(double firstNumber, double secondNumber);
+        
+        public delegate string[] DelegateWordsArraySort(string[] initialArray);
+
+        public delegate double MathOperation(double numberOne, double numberTwo);
+        
         static void Main(string[] args)
         {
             // 1.
-            DelegateSum sum = delegate (int one, int two)
+            DelegateSum sum = delegate (double one, double two)
             {
                 return one + two;
             };
@@ -56,6 +60,44 @@ namespace DelegatesExtended
             {
                 Console.Write(item + " ");
             }
+
+            // 3.
+
+            MathOperation[] ops = new MathOperation[4] {delegate(double one, double two) { return one + two; }, delegate (double one, double two) { return one - two; },
+            delegate(double one, double two) { return one * two; },delegate(double one, double two) { return one / two; }};
+
+            Console.WriteLine("Введите первое число: ");
+
+            double firstNumber = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Введите второе число: ");
+
+            double secondNumber = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Введите желаемую операцию: ");
+
+            string operation = Console.ReadLine();
+
+            switch (operation)
+            {
+                case "Сложение":
+                    Console.WriteLine(ops[0](firstNumber, secondNumber));
+                    break;
+                case "Вычитание":
+                    Console.WriteLine(ops[1](firstNumber, secondNumber));
+                    break;
+                case "Умножение":
+                    Console.WriteLine(ops[2](firstNumber, secondNumber));
+                    break;
+                case "Деление":
+                    Console.WriteLine(ops[3](firstNumber, secondNumber));
+                    break;
+                default:
+                    Console.WriteLine("Такой операции нет!");
+                    break;
+            }
+
+
         }
     }
 }
