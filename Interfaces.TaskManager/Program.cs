@@ -22,7 +22,7 @@ namespace Interfaces.TaskManager
             manager.AddTask(new Task("Отдых", new DateTime(2005, 6, 1), Priority.MEDIUM));
 
             manager.AddEvent(new Event("День рождения", new DateTime(2019, 6, 5), Priority.HIGH, "My house"));
-
+            manager.EditData();
             manager.Display();
 
             manager.DeleteTask("Поход к врачу");
@@ -30,6 +30,13 @@ namespace Interfaces.TaskManager
 
             manager.DeleteTask("День рождения");
             manager.Display();
+
+            manager.EditData();
+            manager.Display();
+
+            
+
+            
         }
     }
 
@@ -64,6 +71,11 @@ namespace Interfaces.TaskManager
             DueDate = dueDate;
             Priority = priority;
         }
+
+        public override string ToString()
+        {
+            return "Task";
+        }
     }
 
     public class Event : ITask
@@ -91,6 +103,11 @@ namespace Interfaces.TaskManager
                         this.Priority,
                         this.Location
                         );
+        }
+
+        public override string ToString()
+        {
+            return "Event";
         }
     }
 
@@ -121,6 +138,44 @@ namespace Interfaces.TaskManager
                 {
                     DataList.Remove(item);
                     break;
+                }
+            }
+        }
+
+        public void EditData()
+        {
+            Console.WriteLine("Введите название события или задачи:");
+            string title = Console.ReadLine();
+
+            for(int i = 0; i < DataList.Count; i++)
+            {
+                if (DataList[i].Title.Equals(title))
+                {
+                    string type = DataList[i].ToString();
+
+                    switch (type)
+                    {
+                        case "Task":
+                            Console.WriteLine("Что необходимо поменять?\n1.Название\n2.Дату\n3.Приоритет");
+                            int option = int.Parse(Console.ReadLine());
+                            switch (option)
+                            {
+                                case 1:
+                                    DataList[i].Title = Console.ReadLine();
+                                    break;
+                                case 2:
+                                    DataList[i].DueDate = new DateTime(int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine()));
+                                    break;
+                                case 3:
+                                    Console.WriteLine("Введите нужную цифру\n0 - Высокий приоритет\n1 - Средний приоритет\n2 - Низкий приоритет");
+                                    DataList[i].Priority = (Priority) int.Parse(Console.ReadLine());
+                                    break;
+                                default:
+                                    Console.WriteLine("Такой команды не существует");
+                                    break;
+                            }
+                            break;                        
+                    }
                 }
             }
         }
