@@ -10,6 +10,23 @@ namespace AnimalShelter
     {
         static void Main(string[] args)
         {
+            Animal cougar = new Animal(3, "Пума", "Pale", new DateTime(2020, 5, 1), 2);
+            Animal jaguar = new Animal(1, "Ягуар", "Black", new DateTime(2019, 4, 25), 1);
+            Animal tiger = new Animal(2, "Тигр", "Orange-Black", new DateTime(2018, 12, 25), 4);
+
+            Animals<Animal> animals = new Animals<Animal>();
+            animals.AddAnimal(cougar);
+            animals.AddAnimal(tiger);
+            animals.AddAnimal(jaguar);
+
+            List<Animal> total = animals.GetAnimals();
+
+            foreach(var item in total)
+            {
+                Console.WriteLine(item.Id + " " + item.NickName + " " + item.AcceptanceDate.ToShortDateString() + " " + item.Age + " " + item.Breed);
+            }
+
+            Console.WriteLine(animals.GetConcreteAnimal(1).NickName);
         }
     }
 
@@ -45,7 +62,7 @@ namespace AnimalShelter
 
         public void AddAnimal(T animal)
         {
-            Wards[animal.Id] = animal;
+            Wards.Add(animal);
         }
 
         public List<T> GetAnimals()
@@ -55,7 +72,22 @@ namespace AnimalShelter
 
         public T GetConcreteAnimal(int id)
         {
-            return Wards[id];
+            T value = Wards[0];
+            if(id >= Wards.Count)
+            {
+                Console.WriteLine("Животного с таким идентификатором нет. Выводится первое по списку животное");
+                return value;
+            }
+
+            foreach(var item in Wards)
+            {
+                if(item.Id == id)
+                {
+                    value = item;
+                }
+            }
+
+            return value;
         }
     }
 }
