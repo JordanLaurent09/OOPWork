@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimalShelter", "AnimalShel
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XLSXClientList", "XLSXClientList\XLSXClientList.csproj", "{099386B8-F71E-4657-AED7-F4B19DAB29B6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XLSXCalendar", "XLSXCalendar\XLSXCalendar.csproj", "{EFF46BC8-B9C1-4919-8A5E-2E91D1A54AF0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -135,6 +137,10 @@ Global
 		{099386B8-F71E-4657-AED7-F4B19DAB29B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{099386B8-F71E-4657-AED7-F4B19DAB29B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{099386B8-F71E-4657-AED7-F4B19DAB29B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFF46BC8-B9C1-4919-8A5E-2E91D1A54AF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFF46BC8-B9C1-4919-8A5E-2E91D1A54AF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFF46BC8-B9C1-4919-8A5E-2E91D1A54AF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFF46BC8-B9C1-4919-8A5E-2E91D1A54AF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
