@@ -29,12 +29,12 @@ namespace XLSXCalendar
                     dayOfYear++;
                     calendarSheet.Cells[1, i + 1].Value = months[i - 1];
                     calendarSheet.Cells[j + 1, i + 1].Value = j;
-                    if(dayOfYear == 1 || dayOfYear % 7 == 0)
+                    if(dayOfYear == 1 || dayOfYear % 7 == 0 || dayOfYear % 7 == 1)
                     {
                         calendarSheet.Cells[j + 1, i + 1].Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.DarkGrid;
-                        calendarSheet.Cells[j + 2, i + 2].Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.DarkGrid;
+                        
                         calendarSheet.Cells[j + 1, i + 1].Style.Fill.BackgroundColor.SetColor(Color.BlueViolet);
-                        calendarSheet.Cells[j + 2, i + 2].Style.Fill.BackgroundColor.SetColor(Color.BlueViolet);
+                        
                     }
                     if (i == 2 && j == 28) break;
                     if ((i == 4 || i == 6 || i == 9 || i == 11) && j == 30) break;
