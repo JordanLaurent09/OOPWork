@@ -56,6 +56,11 @@ namespace TaskBasics
             {
                 WriteToFile(bookChapter);
             });
+
+            sum.Wait();
+            readText.Wait();
+            factorial.Wait();
+            gyperion.Wait();
         }
 
 
