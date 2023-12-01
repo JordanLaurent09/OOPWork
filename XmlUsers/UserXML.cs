@@ -8,6 +8,10 @@ using System.IO;
 
 namespace XmlUsers
 {
+    /// <summary>
+    /// Класс, предоставляющий сериализацию и десериализацию
+    /// класса User
+    /// </summary>
     public static class UserXML
     {
 
@@ -30,9 +34,11 @@ namespace XmlUsers
 
             XmlSerializer deserializer = new XmlSerializer(typeof(List<User>));
 
-            FileStream stream = new FileStream("users.xml", FileMode.Open);
+            FileStream stream = new FileStream("users.xml", FileMode.OpenOrCreate);
 
             users = (List<User>)deserializer.Deserialize(stream);
+
+            stream.Close();
 
             return users;
         }

@@ -13,6 +13,11 @@ namespace XmlUsers
         public string Password { get; set; }
         public int Age { get; set; }
 
+
+        public User()
+        {
+
+        }
         public User(string name, string password, int age)
         {
             Name = name;
@@ -20,7 +25,11 @@ namespace XmlUsers
             Age = age;
         }
 
-        public void CreateNewUser(List<User> users)
+        /// <summary>
+        /// Метод, позволяющий пользователю создавать новых пользователей
+        /// </summary>
+        /// <param name="users"></param>
+        public static void CreateNewUser(List<User> users)
         {
             Console.WriteLine("Введите имя нового пользователя");
             string name = Console.ReadLine();
