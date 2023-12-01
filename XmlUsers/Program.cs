@@ -15,6 +15,25 @@ namespace XmlUsers
         }
 
 
+        public bool Authentificate(List<User> users)
+        {
+            bool isAuthentificated = false;
 
+            Console.WriteLine();
+            string name = Console.ReadLine();
+            Console.WriteLine();
+            string password = Console.ReadLine();
+
+
+            foreach(User items in users)
+            {
+                if(items.Name == name && items.Password == password)
+                {
+                    isAuthentificated = true;
+                }
+            }
+            return isAuthentificated;
+
+        }
     }
 }
