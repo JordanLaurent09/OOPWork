@@ -29,44 +29,46 @@ namespace XLSX_ContactList
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.contactNameCB = new System.Windows.Forms.ComboBox();
+            this.addressTB = new System.Windows.Forms.TextBox();
+            this.phoneTB = new System.Windows.Forms.TextBox();
+            this.emailTB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // contactNameCB
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(73, 75);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
+            this.contactNameCB.FormattingEnabled = true;
+            this.contactNameCB.Location = new System.Drawing.Point(73, 75);
+            this.contactNameCB.Name = "contactNameCB";
+            this.contactNameCB.Size = new System.Drawing.Size(121, 21);
+            this.contactNameCB.TabIndex = 0;
+            this.contactNameCB.SelectedIndexChanged += new System.EventHandler(this.contactNameCB_SelectedIndexChanged);
             // 
-            // textBox1
+            // addressTB
             // 
-            this.textBox1.Location = new System.Drawing.Point(76, 136);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 1;
+            this.addressTB.Location = new System.Drawing.Point(76, 136);
+            this.addressTB.Name = "addressTB";
+            this.addressTB.Size = new System.Drawing.Size(121, 20);
+            this.addressTB.TabIndex = 1;
             // 
-            // textBox2
+            // phoneTB
             // 
-            this.textBox2.Location = new System.Drawing.Point(76, 192);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 20);
-            this.textBox2.TabIndex = 2;
+            this.phoneTB.Location = new System.Drawing.Point(76, 192);
+            this.phoneTB.Name = "phoneTB";
+            this.phoneTB.Size = new System.Drawing.Size(121, 20);
+            this.phoneTB.TabIndex = 2;
             // 
-            // textBox3
+            // emailTB
             // 
-            this.textBox3.Location = new System.Drawing.Point(76, 250);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 20);
-            this.textBox3.TabIndex = 3;
+            this.emailTB.Location = new System.Drawing.Point(76, 250);
+            this.emailTB.Name = "emailTB";
+            this.emailTB.Size = new System.Drawing.Size(121, 20);
+            this.emailTB.TabIndex = 3;
             // 
             // label1
             // 
@@ -104,21 +106,33 @@ namespace XLSX_ContactList
             this.label4.TabIndex = 7;
             this.label4.Text = "Электронный адрес:";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Californian FB", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(73, 21);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(121, 16);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "СПИСОК КОНТАКТОВ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(267, 450);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.emailTB);
+            this.Controls.Add(this.phoneTB);
+            this.Controls.Add(this.addressTB);
+            this.Controls.Add(this.contactNameCB);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,14 +140,15 @@ namespace XLSX_ContactList
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.ComboBox contactNameCB;
+        private System.Windows.Forms.TextBox addressTB;
+        private System.Windows.Forms.TextBox phoneTB;
+        private System.Windows.Forms.TextBox emailTB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
 
