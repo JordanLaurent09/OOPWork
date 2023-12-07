@@ -53,6 +53,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager", "TaskManager\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlUsers", "XmlUsers\XmlUsers.csproj", "{8F4A5012-BF6C-42AB-ABC6-AA2D4F9363A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XLSX_ContactList", "XLSX_ContactList\XLSX_ContactList.csproj", "{B5108680-1C5C-4668-911B-D258DCAFE835}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -159,6 +161,10 @@ Global
 		{8F4A5012-BF6C-42AB-ABC6-AA2D4F9363A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F4A5012-BF6C-42AB-ABC6-AA2D4F9363A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F4A5012-BF6C-42AB-ABC6-AA2D4F9363A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5108680-1C5C-4668-911B-D258DCAFE835}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5108680-1C5C-4668-911B-D258DCAFE835}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5108680-1C5C-4668-911B-D258DCAFE835}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5108680-1C5C-4668-911B-D258DCAFE835}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
