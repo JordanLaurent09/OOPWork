@@ -22,11 +22,12 @@ namespace XLSX_ContactList
         public Form1()
         {
             InitializeComponent();
+            GetContacts();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            GetContacts();
+            
             saveNewContactBTN.Enabled = false;
         }
 
@@ -50,6 +51,14 @@ namespace XLSX_ContactList
                 
             }
 
+            //for (int i = 0; i < _contacts.Count; i++)
+            //{
+            //    contactNameCB.Items.Add(_contacts[i].Name);
+            //}
+        }
+
+        private void ShowContacts()
+        {
             for (int i = 0; i < _contacts.Count; i++)
             {
                 contactNameCB.Items.Add(_contacts[i].Name);
@@ -69,11 +78,13 @@ namespace XLSX_ContactList
             }
         }
 
+
+        // Создание нового контакта
         private void createContactBTN_Click(object sender, EventArgs e)
         {
             createContactBTN.Enabled = false;
             saveNewContactBTN.Enabled = true;
-            contactNameCB.Text = string.Empty;
+            contactNameCB.Items.Clear();
             addressTB.Text = string.Empty;
             phoneTB.Text = string.Empty;
             emailTB.Text = string.Empty;
@@ -95,6 +106,8 @@ namespace XLSX_ContactList
             return isExist;
         }
 
+
+        // Сохранение нового контакта
         private void saveNewContactBTN_Click(object sender, EventArgs e)
         {
             if (contactNameCB.Text != string.Empty && addressTB.Text != string.Empty && phoneTB.Text != string.Empty &&
@@ -106,6 +119,14 @@ namespace XLSX_ContactList
                 {
                     _contacts.Add(new Contact(contactNameCB.Text, addressTB.Text, phoneTB.Text, emailTB.Text));
                     MessageBox.Show("Контакт успешно добавлен");
+                    contactNameCB.Text = string.Empty;
+                    contactNameCB.Items.Clear();
+                    addressTB.Text = string.Empty;
+                    phoneTB.Text = string.Empty;
+                    emailTB.Text = string.Empty;
+                    saveNewContactBTN.Enabled = false;
+                    createContactBTN.Enabled = true;
+                    ShowContacts();
                 }
                 else
                 {
