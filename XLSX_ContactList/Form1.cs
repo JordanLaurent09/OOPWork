@@ -27,6 +27,7 @@ namespace XLSX_ContactList
         private void Form1_Load(object sender, EventArgs e)
         {
             GetContacts();
+            saveNewContactBTN.Enabled = false;
         }
 
 
@@ -65,6 +66,56 @@ namespace XLSX_ContactList
                     phoneTB.Text = item.Phone;
                     emailTB.Text = item.Email;
                 }
+            }
+        }
+
+        private void createContactBTN_Click(object sender, EventArgs e)
+        {
+            createContactBTN.Enabled = false;
+            saveNewContactBTN.Enabled = true;
+            contactNameCB.Text = string.Empty;
+            addressTB.Text = string.Empty;
+            phoneTB.Text = string.Empty;
+            emailTB.Text = string.Empty;
+
+            
+        }
+
+        private bool IfContactExists(string name, string address, string phone, string email)
+        {
+            bool isExist = false;
+            foreach(Contact item in _contacts)
+            {
+                if(item.Name == name && item.Address == address && item.Phone == phone && item.Email == email)
+                {
+                    isExist = true;
+                }
+            }
+
+            return isExist;
+        }
+
+        private void saveNewContactBTN_Click(object sender, EventArgs e)
+        {
+            if (contactNameCB.Text != string.Empty && addressTB.Text != string.Empty && phoneTB.Text != string.Empty &&
+                emailTB.Text != string.Empty)
+            {
+                bool isExist = IfContactExists(contactNameCB.Text, addressTB.Text, phoneTB.Text, emailTB.Text);
+
+                if (isExist == false)
+                {
+                    _contacts.Add(new Contact(contactNameCB.Text, addressTB.Text, phoneTB.Text, emailTB.Text));
+                    MessageBox.Show("Контакт успешно добавлен");
+                }
+                else
+                {
+                    MessageBox.Show("Такой контакт уже есть");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Сначала добавьте всю необходимую информацию о новом контакте");
             }
         }
     }

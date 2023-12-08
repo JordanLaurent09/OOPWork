@@ -38,6 +38,8 @@ namespace XLSX_ContactList
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.createContactBTN = new System.Windows.Forms.Button();
+            this.saveNewContactBTN = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // contactNameCB
@@ -116,11 +118,33 @@ namespace XLSX_ContactList
             this.label5.TabIndex = 8;
             this.label5.Text = "СПИСОК КОНТАКТОВ";
             // 
+            // createContactBTN
+            // 
+            this.createContactBTN.Location = new System.Drawing.Point(24, 291);
+            this.createContactBTN.Name = "createContactBTN";
+            this.createContactBTN.Size = new System.Drawing.Size(84, 54);
+            this.createContactBTN.TabIndex = 9;
+            this.createContactBTN.Text = "Создать новый контакт";
+            this.createContactBTN.UseVisualStyleBackColor = true;
+            this.createContactBTN.Click += new System.EventHandler(this.createContactBTN_Click);
+            // 
+            // saveNewContactBTN
+            // 
+            this.saveNewContactBTN.Location = new System.Drawing.Point(119, 291);
+            this.saveNewContactBTN.Name = "saveNewContactBTN";
+            this.saveNewContactBTN.Size = new System.Drawing.Size(87, 54);
+            this.saveNewContactBTN.TabIndex = 10;
+            this.saveNewContactBTN.Text = "Добавить новый контакт";
+            this.saveNewContactBTN.UseVisualStyleBackColor = true;
+            this.saveNewContactBTN.Click += new System.EventHandler(this.saveNewContactBTN_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(267, 450);
+            this.Controls.Add(this.saveNewContactBTN);
+            this.Controls.Add(this.createContactBTN);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -149,6 +173,8 @@ namespace XLSX_ContactList
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button createContactBTN;
+        private System.Windows.Forms.Button saveNewContactBTN;
     }
 }
 
