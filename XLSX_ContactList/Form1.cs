@@ -38,15 +38,15 @@ namespace XLSX_ContactList
 
             for (int i = 1; i < contactSheet.Rows.EndRow; i++)
             {
-                for (int j = 1; j < contactSheet.Columns.EndColumn; j++)
-                {
-                    string contactName = contactSheet.Cells[i, j].Text;
-                    string contactAddress = contactSheet.Cells[i, j].Text;
-                    string contactPhone = contactSheet.Cells[i, j].Text;
-                    string contactEmail = contactSheet.Cells[i, j].Text;
+
+                if (contactSheet.Cells[i, 1].Text == string.Empty) break;
+                    string contactName = contactSheet.Cells[i, 1].Text;
+                    string contactAddress = contactSheet.Cells[i, 2].Text;
+                    string contactPhone = contactSheet.Cells[i, 3].Text;
+                    string contactEmail = contactSheet.Cells[i, 4].Text;
 
                     _contacts.Add(new Contact(contactName, contactAddress, contactPhone, contactEmail));
-                }
+                
             }
 
             for (int i = 0; i < _contacts.Count; i++)
