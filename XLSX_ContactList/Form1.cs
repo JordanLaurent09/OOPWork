@@ -22,12 +22,13 @@ namespace XLSX_ContactList
         public Form1()
         {
             InitializeComponent();
-            GetContacts();
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            GetContacts();
+            ShowContacts();
             saveNewContactBTN.Enabled = false;
         }
 
@@ -57,6 +58,7 @@ namespace XLSX_ContactList
             //}
         }
 
+        // Вывод списка контактов
         private void ShowContacts()
         {
             for (int i = 0; i < _contacts.Count; i++)
@@ -92,6 +94,7 @@ namespace XLSX_ContactList
             
         }
 
+        // Проверка существования контакта
         private bool IfContactExists(string name, string address, string phone, string email)
         {
             bool isExist = false;
@@ -106,6 +109,20 @@ namespace XLSX_ContactList
             return isExist;
         }
 
+        // Добавление новых контактов в excel-файл
+
+        private void WriteExcelFile()
+        {
+            for(int i = 0; i < _contacts.Count; i++)
+            {
+                contactSheet.Cells[i + 1, 1].Value = _contacts[i].Name;
+                contactSheet.Cells[i + 1, 2].Value = _contacts[i].Address;
+                contactSheet.Cells[i + 1, 3].Value = _contacts[i].Phone;
+                contactSheet.Cells[i + 1, 4].Value = _contacts[i].Email;
+            }
+
+            contactBook.Save();
+        }
 
         // Сохранение нового контакта
         private void saveNewContactBTN_Click(object sender, EventArgs e)
@@ -119,6 +136,7 @@ namespace XLSX_ContactList
                 {
                     _contacts.Add(new Contact(contactNameCB.Text, addressTB.Text, phoneTB.Text, emailTB.Text));
                     MessageBox.Show("Контакт успешно добавлен");
+                    WriteExcelFile();
                     contactNameCB.Text = string.Empty;
                     contactNameCB.Items.Clear();
                     addressTB.Text = string.Empty;

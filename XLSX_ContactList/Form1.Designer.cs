@@ -40,6 +40,8 @@ namespace XLSX_ContactList
             this.label5 = new System.Windows.Forms.Label();
             this.createContactBTN = new System.Windows.Forms.Button();
             this.saveNewContactBTN = new System.Windows.Forms.Button();
+            this.editContactBTN = new System.Windows.Forms.Button();
+            this.saveEditBTN = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // contactNameCB
@@ -130,7 +132,7 @@ namespace XLSX_ContactList
             // 
             // saveNewContactBTN
             // 
-            this.saveNewContactBTN.Location = new System.Drawing.Point(119, 291);
+            this.saveNewContactBTN.Location = new System.Drawing.Point(150, 291);
             this.saveNewContactBTN.Name = "saveNewContactBTN";
             this.saveNewContactBTN.Size = new System.Drawing.Size(87, 54);
             this.saveNewContactBTN.TabIndex = 10;
@@ -138,11 +140,31 @@ namespace XLSX_ContactList
             this.saveNewContactBTN.UseVisualStyleBackColor = true;
             this.saveNewContactBTN.Click += new System.EventHandler(this.saveNewContactBTN_Click);
             // 
+            // editContactBTN
+            // 
+            this.editContactBTN.Location = new System.Drawing.Point(24, 351);
+            this.editContactBTN.Name = "editContactBTN";
+            this.editContactBTN.Size = new System.Drawing.Size(84, 61);
+            this.editContactBTN.TabIndex = 11;
+            this.editContactBTN.Text = "Изменить существующий контакт";
+            this.editContactBTN.UseVisualStyleBackColor = true;
+            // 
+            // saveEditBTN
+            // 
+            this.saveEditBTN.Location = new System.Drawing.Point(150, 351);
+            this.saveEditBTN.Name = "saveEditBTN";
+            this.saveEditBTN.Size = new System.Drawing.Size(84, 61);
+            this.saveEditBTN.TabIndex = 12;
+            this.saveEditBTN.Text = "Сохранить изменения";
+            this.saveEditBTN.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(267, 450);
+            this.Controls.Add(this.saveEditBTN);
+            this.Controls.Add(this.editContactBTN);
             this.Controls.Add(this.saveNewContactBTN);
             this.Controls.Add(this.createContactBTN);
             this.Controls.Add(this.label5);
@@ -175,6 +197,8 @@ namespace XLSX_ContactList
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button createContactBTN;
         private System.Windows.Forms.Button saveNewContactBTN;
+        private System.Windows.Forms.Button editContactBTN;
+        private System.Windows.Forms.Button saveEditBTN;
     }
 }
 
