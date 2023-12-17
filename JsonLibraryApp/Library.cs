@@ -35,13 +35,9 @@ namespace JsonLibraryApp
         {
             List<Book> books = new List<Book>();
 
-            JsonSerializer serializer = new JsonSerializer();
+            string data = File.ReadAllText("library.json");
 
-            using(StreamReader sr = new StreamReader($"{Directory.GetCurrentDirectory()}\\library.json"))
-                using(JsonReader reader = new JsonTextReader(sr))
-            {
-                books = (List<Book>)serializer.Deserialize(reader);
-            }
+            books = JsonConvert.DeserializeObject<List<Book>>(data);
 
             return books;
         }
