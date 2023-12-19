@@ -10,6 +10,10 @@ namespace WordTableAvArythmProject
     {
         static void Main(string[] args)
         {
+            int numbersSum = 0;
+
+            int numbersCount = 0;
+
             Random random = new Random();
 
             Word.Application wordApp = new Word.Application();
@@ -20,13 +24,25 @@ namespace WordTableAvArythmProject
 
             Word.Table table = wordDoc.Tables.Add(range, NumRows: 10, NumColumns: 10);
 
-            for(int i = 1; i <= 10; i++)
+            table.Borders.OutsideLineStyle = Word.WdLineStyle.wdLineStyleSingle;
+            table.Borders.InsideLineStyle = Word.WdLineStyle.wdLineStyleSingle;
+
+
+            for (int i = 1; i <= 10; i++)
             {
-                for(int j = 1; j <= 10; j++)
+                for (int j = 1; j <= 10; j++)
                 {
-                    table.Cell(i, j).Range.Text = random.Next(1, 21).ToString();
+                    int number = random.Next(1, 21);
+
+                    numbersSum += number;
+
+                    table.Cell(i, j).Range.Text = number.ToString();
+
+                    numbersCount++;
                 }
             }
+
+            Console.WriteLine($"Среднее арифметическое равно {numbersSum / numbersCount}");
 
             wordDoc.Save();
             wordDoc.Close();
