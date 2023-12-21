@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using OfficeOpenXml;
 
@@ -21,8 +15,7 @@ namespace XLSX_ContactList
 
         public Form1()
         {
-            InitializeComponent();
-            
+            InitializeComponent();           
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -41,21 +34,14 @@ namespace XLSX_ContactList
 
             for (int i = 1; i < contactSheet.Rows.EndRow; i++)
             {
-
                 if (contactSheet.Cells[i, 1].Text == string.Empty) break;
                     string contactName = contactSheet.Cells[i, 1].Text;
                     string contactAddress = contactSheet.Cells[i, 2].Text;
                     string contactPhone = contactSheet.Cells[i, 3].Text;
                     string contactEmail = contactSheet.Cells[i, 4].Text;
 
-                    _contacts.Add(new Contact(contactName, contactAddress, contactPhone, contactEmail));
-                
+                    _contacts.Add(new Contact(contactName, contactAddress, contactPhone, contactEmail));   
             }
-
-            //for (int i = 0; i < _contacts.Count; i++)
-            //{
-            //    contactNameCB.Items.Add(_contacts[i].Name);
-            //}
         }
 
         // Вывод списка контактов
@@ -84,15 +70,21 @@ namespace XLSX_ContactList
         // Создание нового контакта
         private void createContactBTN_Click(object sender, EventArgs e)
         {
+            CreateContact(); 
+        }
+
+        // Метод с логикой создания нового контакта
+
+        public void CreateContact()
+        {
             createContactBTN.Enabled = false;
             saveNewContactBTN.Enabled = true;
             contactNameCB.Items.Clear();
+            contactNameCB.Text = string.Empty;
             addressTB.Text = string.Empty;
             phoneTB.Text = string.Empty;
             emailTB.Text = string.Empty;
-
-            
-        }
+        } 
 
         // Проверка существования контакта
         private bool IfContactExists(string name, string address, string phone, string email)
@@ -115,9 +107,13 @@ namespace XLSX_ContactList
         {
             for(int i = 0; i < _contacts.Count; i++)
             {
+                contactSheet.Cells[i + 1, 1].AutoFitColumns();
                 contactSheet.Cells[i + 1, 1].Value = _contacts[i].Name;
+                contactSheet.Cells[i + 1, 2].AutoFitColumns();
                 contactSheet.Cells[i + 1, 2].Value = _contacts[i].Address;
+                contactSheet.Cells[i + 1, 3].AutoFitColumns();
                 contactSheet.Cells[i + 1, 3].Value = _contacts[i].Phone;
+                contactSheet.Cells[i + 1, 4].AutoFitColumns();
                 contactSheet.Cells[i + 1, 4].Value = _contacts[i].Email;
             }
 
@@ -137,6 +133,13 @@ namespace XLSX_ContactList
 
         // Сохранение нового контакта
         private void saveNewContactBTN_Click(object sender, EventArgs e)
+        {
+            SaveContact();
+        }
+
+        
+        // Метод с логикой сохранения нового контакта
+        private void SaveContact()
         {
             if (contactNameCB.Text != string.Empty && addressTB.Text != string.Empty && phoneTB.Text != string.Empty &&
                 emailTB.Text != string.Empty)
@@ -173,6 +176,12 @@ namespace XLSX_ContactList
         // Перезапись отдельных ячеек контакта
         private void editContactBTN_Click(object sender, EventArgs e)
         {
+            EditContact();
+        }
+
+        // Метод с логикой перезаписи отдельных ячеек конкретного контакта
+        private void EditContact()
+        {
             int index = contactNameCB.SelectedIndex;
 
             if (contactNameCB.Text != string.Empty && addressTB.Text != string.Empty && phoneTB.Text != string.Empty &&
@@ -186,7 +195,7 @@ namespace XLSX_ContactList
                 MessageBox.Show("Контакт успешно изменен");
                 WriteExcelFile();
                 contactNameCB.Items.Clear();
-                ShowContacts();                         
+                ShowContacts();
             }
             else
             {
@@ -196,6 +205,13 @@ namespace XLSX_ContactList
 
         // Удаление выбранного контакта
         private void deleteBTN_Click(object sender, EventArgs e)
+        {
+            DeleteContact();
+        }
+
+
+        // Метод с логикой удаления контакта
+        private void DeleteContact()
         {
             foreach (Contact contact in _contacts)
             {
