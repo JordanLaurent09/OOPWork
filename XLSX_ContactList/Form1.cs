@@ -124,6 +124,17 @@ namespace XLSX_ContactList
             contactBook.Save();
         }
 
+        // Перезапись данных в excel-файле в связи с удалением контакта
+        private void RewriteExcelFile()
+        {
+            contactBook = new ExcelPackage("ContactBook.xlsx");
+            contactSheet = contactBook.Workbook.Worksheets["Contacts"];
+            contactBook.Workbook.Worksheets.Delete(contactSheet);
+            contactSheet = contactBook.Workbook.Worksheets.Add("Contacts");
+
+            WriteExcelFile();
+        }
+
         // Сохранение нового контакта
         private void saveNewContactBTN_Click(object sender, EventArgs e)
         {
@@ -173,10 +184,15 @@ namespace XLSX_ContactList
                 if (contactNameCB.SelectedItem.ToString() == contact.Name)
                 {
                     _contacts.Remove(contact);
-                    MessageBox.Show("Контакт успешно удален!");
                     WriteExcelFile();
                     contactNameCB.Items.Clear();
                     ShowContacts();
+                    RewriteExcelFile();
+                    contactNameCB.Text = string.Empty;
+                    addressTB.Text = string.Empty;
+                    phoneTB.Text = string.Empty;
+                    emailTB.Text = string.Empty;
+                    MessageBox.Show("Контакт успешно удален!");
                     return;
                 }
             }
