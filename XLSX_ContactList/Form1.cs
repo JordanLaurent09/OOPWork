@@ -173,7 +173,25 @@ namespace XLSX_ContactList
         // Перезапись отдельных ячеек контакта
         private void editContactBTN_Click(object sender, EventArgs e)
         {
-            
+            int index = contactNameCB.SelectedIndex;
+
+            if (contactNameCB.Text != string.Empty && addressTB.Text != string.Empty && phoneTB.Text != string.Empty &&
+                emailTB.Text != string.Empty)
+            {
+                _contacts[index].Name = contactNameCB.Text;
+                _contacts[index].Address = addressTB.Text;
+                _contacts[index].Phone = phoneTB.Text;
+                _contacts[index].Email = emailTB.Text;
+
+                MessageBox.Show("Контакт успешно изменен");
+                WriteExcelFile();
+                contactNameCB.Items.Clear();
+                ShowContacts();                         
+            }
+            else
+            {
+                MessageBox.Show("Сначала добавьте всю необходимую информацию о новом контакте");
+            }
         }
 
         // Удаление выбранного контакта

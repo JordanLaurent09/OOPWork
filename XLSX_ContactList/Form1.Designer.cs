@@ -41,7 +41,6 @@ namespace XLSX_ContactList
             this.createContactBTN = new System.Windows.Forms.Button();
             this.saveNewContactBTN = new System.Windows.Forms.Button();
             this.editContactBTN = new System.Windows.Forms.Button();
-            this.saveEditBTN = new System.Windows.Forms.Button();
             this.deleteBTN = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -151,18 +150,9 @@ namespace XLSX_ContactList
             this.editContactBTN.UseVisualStyleBackColor = true;
             this.editContactBTN.Click += new System.EventHandler(this.editContactBTN_Click);
             // 
-            // saveEditBTN
-            // 
-            this.saveEditBTN.Location = new System.Drawing.Point(150, 351);
-            this.saveEditBTN.Name = "saveEditBTN";
-            this.saveEditBTN.Size = new System.Drawing.Size(84, 61);
-            this.saveEditBTN.TabIndex = 12;
-            this.saveEditBTN.Text = "Сохранить изменения в контакте";
-            this.saveEditBTN.UseVisualStyleBackColor = true;
-            // 
             // deleteBTN
             // 
-            this.deleteBTN.Location = new System.Drawing.Point(24, 418);
+            this.deleteBTN.Location = new System.Drawing.Point(150, 355);
             this.deleteBTN.Name = "deleteBTN";
             this.deleteBTN.Size = new System.Drawing.Size(84, 57);
             this.deleteBTN.TabIndex = 13;
@@ -174,9 +164,8 @@ namespace XLSX_ContactList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(267, 498);
+            this.ClientSize = new System.Drawing.Size(267, 431);
             this.Controls.Add(this.deleteBTN);
-            this.Controls.Add(this.saveEditBTN);
             this.Controls.Add(this.editContactBTN);
             this.Controls.Add(this.saveNewContactBTN);
             this.Controls.Add(this.createContactBTN);
@@ -211,7 +200,6 @@ namespace XLSX_ContactList
         private System.Windows.Forms.Button createContactBTN;
         private System.Windows.Forms.Button saveNewContactBTN;
         private System.Windows.Forms.Button editContactBTN;
-        private System.Windows.Forms.Button saveEditBTN;
         private System.Windows.Forms.Button deleteBTN;
     }
 }
