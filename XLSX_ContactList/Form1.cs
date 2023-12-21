@@ -157,5 +157,29 @@ namespace XLSX_ContactList
                 MessageBox.Show("Сначала добавьте всю необходимую информацию о новом контакте");
             }
         }
+
+
+        // Перезапись отдельных ячеек контакта
+        private void editContactBTN_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        // Удаление выбранного контакта
+        private void deleteBTN_Click(object sender, EventArgs e)
+        {
+            foreach (Contact contact in _contacts)
+            {
+                if (contactNameCB.SelectedItem.ToString() == contact.Name)
+                {
+                    _contacts.Remove(contact);
+                    MessageBox.Show("Контакт успешно удален!");
+                    WriteExcelFile();
+                    contactNameCB.Items.Clear();
+                    ShowContacts();
+                    return;
+                }
+            }
+        }
     }
 }
