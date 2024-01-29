@@ -12,6 +12,7 @@ namespace LINQ_Entrance
     {
         static void Main(string[] args)
         {
+            // 1. Goods
             List<Good> goods = new List<Good>();
 
             using(StreamReader streamReader = new StreamReader("inventoryControl.csv"))
@@ -28,6 +29,25 @@ namespace LINQ_Entrance
             {
                 Console.WriteLine($"Название товара: {item.Name}, количество: {item.Quantity}," +
                     $"цена - {item.Price}, а вот описание: {item.Description}");
+            }
+
+            // 2. Movies
+            List<Movie> movies = new List<Movie>();
+
+            using(StreamReader streamReader = new StreamReader("Movies.csv"))
+            {
+                CsvConfiguration config = new CsvConfiguration(CultureInfo.InvariantCulture);
+                CsvReader reader = new CsvReader(streamReader, config);
+
+                movies = reader.GetRecords<Movie>().ToList();
+            }
+
+            IOrderedEnumerable<Movie> orderedMovies = movies.OrderByDescending(item => item.Year);
+
+            foreach(Movie movie in orderedMovies)
+            {
+                Console.WriteLine($"Номер: { movie.Id}   Год: {movie.Year }    Жанр: {movie.Genre }   " +
+                    $"Оценка: {movie.Graduate }   Название: {movie.Name }");
             }
         }
     }
