@@ -65,6 +65,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyboardSim", "KeyboardSim\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQ_Entrance", "LINQ_Entrance\LINQ_Entrance.csproj", "{918DD1C1-E0A2-42F4-9AB7-E194A2C616E4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasks.AsyncAwait", "Tasks.AsyncAwait\Tasks.AsyncAwait.csproj", "{3CCB8319-FA0E-489B-8FB9-A6B1A47CF107}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -195,6 +197,10 @@ Global
 		{918DD1C1-E0A2-42F4-9AB7-E194A2C616E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{918DD1C1-E0A2-42F4-9AB7-E194A2C616E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{918DD1C1-E0A2-42F4-9AB7-E194A2C616E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CCB8319-FA0E-489B-8FB9-A6B1A47CF107}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CCB8319-FA0E-489B-8FB9-A6B1A47CF107}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CCB8319-FA0E-489B-8FB9-A6B1A47CF107}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CCB8319-FA0E-489B-8FB9-A6B1A47CF107}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
